@@ -28,10 +28,10 @@ def browser(request):
     browser = None
     if browser_name == "chrome":
         print("\nstart Сhrome browser for test..")
-        browser = webdriver.Chrome()
+        browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
         print("\nstart Firefox browser for test..")
-        browser = webdriver.Firefox()
+        browser = webdriver.Firefox(options=options)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     yield browser
